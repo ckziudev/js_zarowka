@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>JS zarowka - display none/block</title>
+
+</head>
+<body>
+    
+    <main class="container">
+        <!-- żarówki -->
+        <div class="d-flex justify-content-center my-5">
+            <img id="zarowka" src="zarowka_off.png" alt="zarowka" >
+        </div>
+
+
+        <!-- przycisk do zapalania i gaszenia -->
+        <div class="d-flex justify-content-center">
+            <button id="przycisk" class="btn btn-success btn-lg">
+                CLICK
+            </button>
+        </div>
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- miejsce na JS -->
+    <script>
+    // kod JS
+
+    $('#przycisk').click(function(){
+           //podmiana atrybutu src
+
+
+            //$('#zarowka').attr('src','fsdfasdfasdfa');
+
+
+           //czy zarowka posiada wyraz "off"
+
+           if($('#zarowka').attr('src').match('off')){
+
+                $('#zarowka').attr('src','zarowka_on.png');
+
+           }else{
+                $('#zarowka').attr('src','zarowka_off.png');
+           }
+
+    });
+
+
+    </script>
+
+</body>
+</html>

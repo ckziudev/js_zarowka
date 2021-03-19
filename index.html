@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>JS zarowka - display none/block</title>
+
+</head>
+<body>
+    
+    <main class="container">
+        <!-- żarówki -->
+        <div class="d-flex justify-content-center my-5">
+            <img id="zarowka-off" src="zarowka_off.png" alt="wyłaczona zarowka" style="display: block">
+            <img id="zarowka-on" src="zarowka_on.png" alt="właczona zarowka" style="display: none">
+        </div>
+
+
+        <!-- przycisk do zapalania i gaszenia -->
+        <div class="d-flex justify-content-center">
+            <button id="przycisk" class="btn btn-success btn-lg">
+                CLICK
+            </button>
+        </div>
+
+    </main>
+
+
+
+
+
+    <!-- miejsce na JS -->
+    <script>
+    // kod JS
+    
+        // przypisanie przycisku do zmiennej
+        var objPrzycisku = document.querySelector('#przycisk');
+
+
+        //definiujemy zmienne na potrzeby każdej z żarówek
+        var zarowkaOff = document.querySelector('#zarowka-off');
+        var zarowkaOn = document.querySelector('#zarowka-on');
+
+
+        //przypięcie "nasłuchiwacza" do obiektu przycisku
+        //reaguje jak usłyszy event "click"
+        objPrzycisku.addEventListener('click', function(){
+            //instrukcje wykonywane po kliknięciu przycisku
+            console.log('kliknięcie!');
+
+
+            //sprawdzamy czy zarowka OFF jest wyświetlana
+
+
+            //jeśli jest aktualnie pokazana na stronie to:          
+            if(zarowkaOff.style.display == 'block'){
+                // ukryj ją (nieświecącą)
+                zarowkaOff.style.display = 'none';
+                // pokaż żarówkę świecącą się
+                zarowkaOn.style.display = 'block';
+            }else{
+                //jeśli jest odwrotnie (nie jest pokazana) to:
+
+                // pokaż ją (nieświecącą)
+                zarowkaOff.style.display = 'block';
+                // ukryj żarówkę świecącą
+                zarowkaOn.style.display = 'none';
+            }
+
+
+            // console.log(zarowkaOff.style.display);
+
+            // zarowkaOff.style.display = 'none';
+
+            // console.log(zarowkaOff.style.display);
+
+        });
+
+        
+
+
+
+
+
+    // console.log('przed alertem');
+
+    // alert('jestem alertem!');
+
+    // console.log('po alercie');
+    
+
+    </script>
+
+</body>
+</html>
