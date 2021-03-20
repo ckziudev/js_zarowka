@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+    <title>JS zarowka - zadanie domowe</title>
+
+</head>
+<body>
+    
+    <main class="container">
+        <!-- żarówki -->
+        <div class="d-flex justify-content-center my-5">
+            <img id="zarowka" src="zarowka_off.png" alt="zarowka" >
+        </div>
+
+
+        <!-- przycisk do zapalania i gaszenia -->
+        <div class="d-flex justify-content-center">
+            <button id="przycisk" class="btn btn-danger btn-lg">
+                OFF
+            </button>
+        </div>
+
+        <!-- <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br>
+        <button class="btn btn-info btn-lg znikajacy-przycisk">ZNIKNIJ!</button><br> -->
+
+
+
+    </main>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- miejsce na JS -->
+    <script>
+    // kod JS
+
+
+    // $('.znikajacy-przycisk').click(function(){
+    //     $(this).hide();
+    // });
+
+
+
+    $('#przycisk').click(function(){
+ 
+           if($('#zarowka').attr('src').match('off')){
+                $('#zarowka').attr('src','zarowka_on.png');
+
+                //zmiana koloru na zielony
+                //usunięcie klasy
+                /////$(this).removeClass('btn-danger');
+                //pure js objekt.classList.remove('klasa-abc'); - usuwanie
+                
+                //dodanie klasy
+                //////$(this).addClass('btn-success');
+                //pure js objekt.classList.add('klasa-abc'); - dodawanie
+
+
+                //zmiana treści w przycisku na ON
+                $(this).text('ON');
+                //pure js: objekt.textContent = "ON"; - wpisanie do elementu
+
+
+           }else{
+                $('#zarowka').attr('src','zarowka_off.png');
+
+                //zmiana koloru na czerwony
+
+                //usunięcie klasy
+                /////$('#przycisk').removeClass('btn-success');
+                //pure js objekt.classList.remove('klasa-abc'); - usuwanie
+                
+                //dodanie klasy
+                //////$('#przycisk').addClass('btn-danger');
+                //pure js objekt.classList.add('klasa-abc'); - dodawanie
+
+
+                //zmiana treści w przycisku na OFF
+                $('#przycisk').text('OFF');
+                //pure js: objekt.textContent = "OFF"; - wpisanie do elementu
+           }
+
+
+           //przełączanie klas
+           $(this).toggleClass('btn-success btn-danger');
+           //$(this).toggleClass('btn-danger');
+
+
+    });
+
+
+    </script>
+
+</body>
+</html>
